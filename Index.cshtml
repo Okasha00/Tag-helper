@@ -1,0 +1,50 @@
+﻿@model TagHelperDemo.Models.Employee;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <form class="d-grid" asp-action="Index" asp-controller="Home" method="post">
+                
+                <input asp-for="Name" placeholder="Enter the name" class="form-control"/>
+                <br/>
+                <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender>()"> 
+                    <option value=""> select Gender</option>
+                </select>
+                <br/>
+                <input asp-for="Age" placeholder="Enter the Age" class="form-control" />
+                <br/>
+                <input asp-for="Designation" placeholder="Enter the Designation" class="form-control" />
+                <br/>
+                <input asp-for="Salary" placeholder="Enter the salary" class="form-control" />
+                <br/>
+                <label>
+                    Married:
+                </label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" asp-for="Married" value="yes">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" asp-for="Married" value="No" >
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        No
+                    </label>
+                </div>
+                <br/>
+            
+                <textarea asp-for="Description" class="form-control" placeholder="Enter the Description" rows="6">Description </textarea>
+                <br/>
+                <input type="submit" value="Submit" class="btn btn-outline-primary btn-block" /> 
+                
+            </form>
+        </div>
+    </div>
+
+</div>
